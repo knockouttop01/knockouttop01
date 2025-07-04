@@ -4,22 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Knock Out Top 01 - Hamid Malik</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #000;
       color: #fff;
+      line-height: 1.6;
     }
-    header, footer {
+    header {
       text-align: center;
       padding: 2em;
       background: #111;
+    }
+    .logo {
+      display: block;
+      max-width: 150px;
+      margin: 0 auto 1em;
     }
     nav a {
       margin: 0 1em;
       color: #fff;
       text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #00ffcc;
+      text-decoration: underline;
     }
     .hero {
       text-align: center;
@@ -29,17 +49,6 @@
       font-size: 3em;
       margin-bottom: 0.5em;
     }
-    .section {
-      padding: 3em 2em;
-      max-width: 800px;
-      margin: auto;
-    }
-    .contact a {
-      color: #00ffcc;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 1em;
-    }
     button {
       background: #fff;
       color: #000;
@@ -48,17 +57,89 @@
       font-size: 1em;
       cursor: pointer;
       margin-top: 1em;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #00ffcc;
+      color: #000;
+      transition: 0.3s;
+    }
+    .section {
+      padding: 3em 2em;
+      max-width: 800px;
+      margin: auto;
+    }
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1em;
+      margin-top: 1.5em;
+    }
+    .service-item {
+      background: #111;
+      border: 1px solid #333;
+      padding: 1.5em;
+      border-radius: 8px;
+    }
+    .contact a {
+      color: #00ffcc;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 10px;
+    }
+    .contact i {
+      font-size: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .contact i:hover {
+      transform: scale(1.2);
+      color: #fff;
+    }
+    .blog-entry {
+      background: #111;
+      padding: 1.5em;
+      border-radius: 8px;
+      margin-bottom: 1.5em;
+      border: 1px solid #333;
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 2em;
+      text-align: center;
+    }
+    .footer-links {
+      margin-bottom: 1em;
+    }
+    .footer-links a {
+      color: #ccc;
+      margin: 0 0.5em;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: #00ffcc;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+      nav a {
+        display: block;
+        margin: 0.5em 0;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="your-logo.png" alt="Knock Out Top 01 Logo" class="logo" />
     <h1>Knock Out Top 01</h1>
     <p>By Hamid Malik – Guest Posting, Link Building & Outreach Expert</p>
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#blogs">Blogs</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -70,29 +151,53 @@
   </section>
 
   <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>I'm Hamid Malik, an outreach and SEO expert since 2021. With years of hands-on experience in link building and guest posting, I help websites climb the ranks through high-quality, niche-relevant backlinks. I'm a verified publisher at Adsy and work with clients worldwide.</p>
+    <h2>About Us</h2>
+    <p>Knock Out Top 01 is led by Hamid Malik, a dedicated outreach and SEO expert since 2021. We specialize in helping websites achieve higher search engine rankings through white-hat link building, guest posting, and blogger outreach strategies. Our team is committed to delivering measurable results for clients worldwide.</p>
   </section>
 
   <section id="services" class="section">
     <h2>Services</h2>
-    <ul>
-      <li>✅ Guest Posting on DA 30–90+ Sites</li>
-      <li>✅ Link Building Campaigns</li>
-      <li>✅ Blogger Outreach (Manual & Niche-Specific)</li>
-      <li>✅ White-Label SEO Services for Agencies</li>
-    </ul>
+    <div class="service-list">
+      <div class="service-item"><i class="fas fa-check-circle"></i> Guest Posting on DA 30–90+ Sites</div>
+      <div class="service-item"><i class="fas fa-check-circle"></i> Link Building Campaigns</div>
+      <div class="service-item"><i class="fas fa-check-circle"></i> Blogger Outreach (Manual & Niche-Specific)</div>
+      <div class="service-item"><i class="fas fa-check-circle"></i> White-Label SEO Services for Agencies</div>
+    </div>
+  </section>
+
+  <section id="blogs" class="section">
+    <h2>Latest Blog Posts</h2>
+    <div class="blog-entry">
+      <h3>Top 5 Benefits of Guest Posting for SEO</h3>
+      <p>Discover why guest posting remains one of the most effective link building strategies in 2025...</p>
+    </div>
+    <div class="blog-entry">
+      <h3>How to Choose the Right Outreach Partner</h3>
+      <p>Learn how to evaluate SEO outreach experts and agencies to get the best ROI...</p>
+    </div>
   </section>
 
   <section id="contact" class="section contact">
     <h2>Contact</h2>
-    <p>📧 Email: <a href="mailto:knockouttop01@gmail.com">knockouttop01@gmail.com</a></p>
-    <p>📱 WhatsApp: <a href="https://wa.me/92327674586">+92 327 674586</a></p>
-    <p>🌐 Facebook: <a href="https://facebook.com/hamid.malik.429237">hamid.malik.429237</a></p>
+    <a href="mailto:knockouttop01@gmail.com" target="_blank" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://wa.me/92327674586" target="_blank" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://facebook.com/hamid.malik.429237" target="_blank" title="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
   </section>
 
   <footer>
-    <p>&copy; 2025 Knock Out Top 01. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#about">About</a> |
+      <a href="#services">Services</a> |
+      <a href="#blogs">Blogs</a> |
+      <a href="#contact">Contact</a>
+    </div>
+    <p>© 2025 Knock Out Top 01. Crafted with 💼 by Hamid Malik. All rights reserved.</p>
   </footer>
 
 </body>
