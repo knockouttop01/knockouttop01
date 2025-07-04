@@ -1,204 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Knock Out Top 01 - Hamid Malik</title>
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 2em;
-      background: #111;
-    }
-    .logo {
-      display: block;
-      max-width: 150px;
-      margin: 0 auto 1em;
-    }
-    nav a {
-      margin: 0 1em;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: #00ffcc;
-      text-decoration: underline;
-    }
-    .hero {
-      text-align: center;
-      padding: 4em 2em;
-    }
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
-    button {
-      background: #fff;
-      color: #000;
-      border: none;
-      padding: 1em 2em;
-      font-size: 1em;
-      cursor: pointer;
-      margin-top: 1em;
-      border-radius: 5px;
-    }
-    button:hover {
-      background: #00ffcc;
-      color: #000;
-      transition: 0.3s;
-    }
-    .section {
-      padding: 3em 2em;
-      max-width: 800px;
-      margin: auto;
-    }
-    .service-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1em;
-      margin-top: 1.5em;
-    }
-    .service-item {
-      background: #111;
-      border: 1px solid #333;
-      padding: 1.5em;
-      border-radius: 8px;
-    }
-    .contact a {
-      color: #00ffcc;
-      text-decoration: none;
-      display: inline-block;
-      margin: 0 10px;
-    }
-    .contact i {
-      font-size: 2rem;
-      transition: transform 0.3s ease;
-    }
-    .contact i:hover {
-      transform: scale(1.2);
-      color: #fff;
-    }
-    .blog-entry {
-      background: #111;
-      padding: 1.5em;
-      border-radius: 8px;
-      margin-bottom: 1.5em;
-      border: 1px solid #333;
-    }
-    footer {
-      background: #111;
-      color: #ccc;
-      padding: 2em;
-      text-align: center;
-    }
-    .footer-links {
-      margin-bottom: 1em;
-    }
-    .footer-links a {
-      color: #ccc;
-      margin: 0 0.5em;
-      text-decoration: none;
-    }
-    .footer-links a:hover {
-      color: #00ffcc;
-    }
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2em;
-      }
-      nav a {
-        display: block;
-        margin: 0.5em 0;
-      }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: #000; color: #fff; line-height: 1.6; }
+    header { background: #cddc39; padding: 1em 2em; }
+    .header-container { max-width: 1100px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .logo { max-width: 120px; }
+    nav { display: flex; align-items: center; gap: 1em; }
+    nav a { color: #111; text-decoration: none; font-weight: 500; }
+    nav a:hover { color: #fff; }
+    .dropdown { position: relative; }
+    .dropdown-content { display: none; position: absolute; background: #fff; min-width: 180px; border-radius: 4px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+    .dropdown-content a { color: #111; padding: 12px 16px; text-decoration: none; display: block; }
+    .dropdown-content a:hover { background: #cddc39; color: #000; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .hero { text-align: center; padding: 4em 2em; }
+    .hero h1 { font-size: 3em; margin-bottom: .5em; color: #cddc39; }
+    button { background: #fff; color: #000; padding: 1em 2em; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #cddc39; }
+    .section { padding: 3em 2em; max-width: 800px; margin: auto; }
+    h2 { color: #cddc39; border-bottom: 2px solid #cddc39; display: inline-block; margin-bottom: 1em; }
+    .service-list, .case-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1em; margin-top: 1.5em; }
+    .service-item, .case-item { background: #111; border: 1px solid #333; padding: 1.5em; border-radius: 8px; }
+    .service-item img, .case-item img { width: 100%; border-radius: 8px; margin-bottom: .75em; }
+    .service-item h3, .case-item h3 { margin-top: 0; color: #cddc39; }
+    .service-item p, .case-item p, .case-item ul { color: #ccc; }
+    .why-choose { background: #111; border: 2px solid #cddc39; border-radius: 8px; padding: 2em; margin-bottom: 2em; }
+    .why-choose ul { list-style: disc; margin-left: 1.2em; color: #ccc; }
+    .why-choose ul li { margin-bottom: .5em; }
+    .blog-entry { background: #111; border: 1px solid #cddc39; border-radius: 8px; padding: 1.5em; margin-bottom: 1.5em; }
+    .blog-entry img { width: 100%; border-radius: 8px; margin-bottom: 1em; }
+    .blog-entry a:hover { color: #cddc39; }
+    .contact a { color: #cddc39; margin: 0 10px; font-size: 1.5em; text-decoration: none; }
+    .contact i:hover { transform: scale(1.2); color: #fff; }
+    footer { background: #cddc39; color: #111; padding: 2em; text-align: center; }
+    .footer-links a { color: #111; margin: 0 .5em; text-decoration: none; }
+    .footer-links a:hover { color: #000; }
+    @media (max-width:768px){
+      .hero h1{ font-size: 2em; }
+      .header-container{ flex-direction: column; }
+      nav{ flex-direction: column; }
+      nav a{ margin: .5em 0; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="your-logo.png" alt="Knock Out Top 01 Logo" class="logo" />
-    <h1>Knock Out Top 01</h1>
-    <p>By Hamid Malik – Guest Posting, Link Building & Outreach Expert</p>
+<header>
+  <div class="header-container">
+    <a href="#hero"><img src="Knock Out Top 01.png" alt="Logo" class="logo"></a>
     <nav>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
+      <div class="dropdown">
+        <a href="#services">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="#services">Guest Posting</a>
+          <a href="#services">Link Building</a>
+          <a href="#services">Blogger Outreach</a>
+          <a href="#services">White‑Label SEO</a>
+        </div>
+      </div>
+      <a href="#case-studies">Case Studies</a>
       <a href="#blogs">Blogs</a>
+      <a href="#why">Why Choose Us?</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <section class="hero">
-    <h1>Grow with Quality Backlinks</h1>
-    <p>Verified publisher on <a href="https://adsy.com" target="_blank" style="color:#00ffcc;">Adsy.com</a></p>
-    <button onclick="document.getElementById('contact').scrollIntoView()">Work With Me</button>
-  </section>
+<section class="hero" id="hero">
+  <h1>Grow with Quality Backlinks</h1>
+  <button onclick="document.getElementById('contact').scrollIntoView()">Work With Us</button>
+</section>
 
-  <section id="about" class="section">
-    <h2>About Us</h2>
-    <p>Knock Out Top 01 is led by Hamid Malik, a dedicated outreach and SEO expert since 2021. We specialize in helping websites achieve higher search engine rankings through white-hat link building, guest posting, and blogger outreach strategies. Our team is committed to delivering measurable results for clients worldwide.</p>
-  </section>
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>Knock Out Top 01 is led by Hamid Malik, a dedicated outreach and SEO team since 2021, specializing in white‑hat link building, guest posting, and blogger outreach worldwide.</p>
+</section>
 
-  <section id="services" class="section">
-    <h2>Services</h2>
-    <div class="service-list">
-      <div class="service-item"><i class="fas fa-check-circle"></i> Guest Posting on DA 30–90+ Sites</div>
-      <div class="service-item"><i class="fas fa-check-circle"></i> Link Building Campaigns</div>
-      <div class="service-item"><i class="fas fa-check-circle"></i> Blogger Outreach (Manual & Niche-Specific)</div>
-      <div class="service-item"><i class="fas fa-check-circle"></i> White-Label SEO Services for Agencies</div>
+<section id="services" class="section">
+  <h2>Services</h2>
+  <div class="service-list">
+    <div class="service-item">
+      <img src="https://i.imgur.com/guestposting.jpg" alt="Guest Posting">
+      <h3><i class="fas fa-check-circle"></i> Guest Posting on DA 30–90+ Sites</h3>
+      <p>We secure high-quality placements on reputable sites to boost domain authority and reach engaged niche audiences.</p>
     </div>
-  </section>
+    <div class="service-item">
+      <img src="https://i.imgur.com/linkbuilding.jpg" alt="Link Building">
+      <h3><i class="fas fa-check-circle"></i> Link Building Campaigns</h3>
+      <p>Targeted campaigns featuring niche content and scalable outreach to strengthen SEO performance.</p>
+    </div>
+    <div class="service-item">
+      <img src="https://i.imgur.com/bloggeroutreach.jpg" alt="Blogger Outreach">
+      <h3><i class="fas fa-check-circle"></i> Blogger Outreach (Manual & Niche‑Specific)</h3>
+      <p>Custom outreach builds real relationships, securing placements that drive quality engagement.</p>
+    </div>
+    <div class="service-item">
+      <img src="https://i.imgur.com/whitelabelseo.jpg" alt="White Label SEO">
+      <h3><i class="fas fa-check-circle"></i> White‑Label SEO Services for Agencies</h3>
+      <p>Complete SEO solutions delivered under your brand, including content, outreach, and reporting.</p>
+    </div>
+  </div>
+</section>
 
-  <section id="blogs" class="section">
-    <h2>Latest Blog Posts</h2>
-    <div class="blog-entry">
+<section id="case-studies" class="section">
+  <h2>Case Studies</h2>
+  <div class="case-list">
+    <div class="case-item">
+      <img src="https://onthemap.com/blog/wp-content/uploads/2023/01/case-study-ecommerce-seo.webp" alt="eCommerce SEO Results">
+      <h3>eCommerce SEO Boost</h3>
+      <p><strong>Challenge:</strong> Low organic traffic & weak backlinks.</p>
+      <p><strong>Result:</strong> +60% traffic 🚀 in 3 months.</p>
+    </div>
+    <div class="case-item">
+      <img src="https://growth.pro/wp-content/uploads/2023/02/seo-case-study-featured.jpg" alt="Startup SEO Results">
+      <h3>Startup Visibility Win</h3>
+      <p><strong>Challenge:</strong> Minimal online visibility.</p>
+      <p><strong>Result:</strong> Featured on 5 authority sites, +45% referral traffic.</p>
+    </div>
+    <div class="case-item">
+      <img src="https://webfortex.com/wp-content/uploads/2021/08/case-studies.jpg" alt="Agency White‑Label Case">
+      <h3>Agency White‑Label Success</h3>
+      <p><strong>Challenge:</strong> Agency needed branded SEO delivery.</p>
+      <p><strong>Result:</strong> Onboarded 10 clients with 4.8★ satisfaction.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="section why-choose">
+  <h2>Why Choose Us?</h2>
+  <ul>
+    <li>Trusted by Brands Worldwide.</li>
+    <li>Premium network of high‑authority sites.</li>
+    <li>Affordable, transparent & flexible pricing.</li>
+    <li>Simple, quick & hassle‑free implementation.</li>
+    <li>Proven long‑term SEO and visibility gains.</li>
+  </ul>
+</section>
+
+<section id="blogs" class="section">
+  <h2>Latest Blog Posts</h2>
+  <div class="blog-entry">
+    <a href="#">
+      <img src="https://via.placeholder.com/800x300?text=Guest+Posting+SEO" alt="Benefits of Guest Posting">
       <h3>Top 5 Benefits of Guest Posting for SEO</h3>
-      <p>Discover why guest posting remains one of the most effective link building strategies in 2025...</p>
-    </div>
-    <div class="blog-entry">
+      <p>Guest posting builds high-quality backlinks, drives targeted traffic, and strengthens credibility using white‑hat methods.</p>
+      <p style="color:#cddc39; font-weight:bold;">Read more →</p>
+    </a>
+  </div>
+  <div class="blog-entry">
+    <a href="#">
+      <img src="https://via.placeholder.com/800x300?text=Outreach+Tips" alt="Outreach Partner Tips">
       <h3>How to Choose the Right Outreach Partner</h3>
-      <p>Learn how to evaluate SEO outreach experts and agencies to get the best ROI...</p>
-    </div>
-  </section>
+      <p>Compare outreach experts using case studies, niche relevance, communication & ethical practices for best ROI.</p>
+      <p style="color:#cddc39; font-weight:bold;">Read more →</p>
+    </a>
+  </div>
+</section>
 
-  <section id="contact" class="section contact">
-    <h2>Contact</h2>
-    <a href="mailto:knockouttop01@gmail.com" target="_blank" title="Email">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://wa.me/92327674586" target="_blank" title="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="https://facebook.com/hamid.malik.429237" target="_blank" title="Facebook">
-      <i class="fab fa-facebook"></i>
-    </a>
-  </section>
+<section id="contact" class="section contact">
+  <h2>Contact</h2>
+  <a href="mailto:knockouttop01@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+  <a href="https://wa.me/92327674586" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://facebook.com/hamid.malik.429237" title="Facebook"><i class="fab fa-facebook"></i></a>
+  <a href="https://www.linkedin.com/in/hamid-malik-b88a7021a" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+</section>
 
-  <footer>
-    <div class="footer-links">
-      <a href="#about">About</a> |
-      <a href="#services">Services</a> |
-      <a href="#blogs">Blogs</a> |
-      <a href="#contact">Contact</a>
-    </div>
-    <p>© 2025 Knock Out Top 01. Crafted with 💼 by Hamid Malik. All rights reserved.</p>
-  </footer>
+<footer>
+  <div class="footer-links">
+    <a href="#about">About</a> |
+    <a href="#services">Services</a> |
+    <a href="#case-studies">Case Studies</a> |
+    <a href="#blogs">Blogs</a> |
+    <a href="#why">Why Choose Us?</a> |
+    <a href="#contact">Contact</a>
+  </div>
+  <p>© 2025 Knock Out Top 01. Crafted with 💼 by Hamid Malik. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
